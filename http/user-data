@@ -1,0 +1,30 @@
+#cloud-config
+autoinstall:
+  version: 1
+  keyboard:
+    layout: es
+  locale: es_ES.UTF-8
+  timezone: America/Argentina/Buenos_Aires
+  network:
+    version: 2
+    ethernets:
+      enp0s3:
+        dhcp4: true
+  identity:
+    hostname: ${hostname}
+    password: ${password}
+    realname: ${username} User
+    username: ${username}
+  ssh:
+    install-server: true
+    allow-pw: true
+  codecs:
+    install: false
+  drivers:
+    install: false
+  packages:
+    - open-vm-tools
+  storage:
+    layout:
+      name: lvm
+  updates: security

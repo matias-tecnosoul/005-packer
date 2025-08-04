@@ -35,7 +35,7 @@ source "virtualbox-iso" "basic-ubuntu" {
   boot_wait         = "10s"
   ssh_username      = var.username
   ssh_password      = var.password
-  ssh_timeout       = "30m"
+  ssh_timeout       = "60m"
   shutdown_command  = "echo '${var.password}' | sudo -S shutdown -P now"
 }
 
